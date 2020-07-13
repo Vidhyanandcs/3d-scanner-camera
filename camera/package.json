@@ -1,0 +1,19 @@
+{
+  "name": "camera_module",
+  "version": "1.0.0",
+  "description": "Camera module controller for PME scanner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Scanner",
+    "controller"
+  ],
+  "author": "Vidhyanand CS",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pi-camera-connect": "^0.3.0"
+  }
+}
