@@ -4,7 +4,7 @@
   "description": "3d scannner for print made eazy",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sudo node src/app.js"
   },
   "keywords": [
     "scanner"
