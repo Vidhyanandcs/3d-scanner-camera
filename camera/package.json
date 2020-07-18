@@ -4,7 +4,8 @@
   "description": "Camera module controller for PME scanner",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sudo node src/app.js",
+    "test": "sudo node src/test.js"
   },
   "keywords": [
     "Scanner",
