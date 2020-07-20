@@ -7,24 +7,47 @@ const app = express()
 const date = new Date()
 const now = date.getTime()
 
-
-app.get('/', function (req, res) {
+//To get images with out projection
+app.get('/imgwp', function (req, res) {
 
     const runApp = async () => {
     
-        const stillCamera = new StillCamera();
+        const stillCamera = new StillCamera()
     
-        const image = await stillCamera.takeImage();
-    
-        //fs.writeFileSync("/img/cam01"+now+".jpg", image);
+        const image = await stillCamera.takeImage()
 
-        res.writeHead(200,{'Content-type':'image/jpg'});
+        //saving to local storage
+        fs.writeFileSync("/img/cam01"+now+".jpg", image) 
 
-        res.end(image);
+        //sending image to controller
+        res.set('Content-Type', 'image/jpg')
+        res.send(Buffer.from(image)) 
+
     }
 
     runApp()
+    
+})
 
+//To get images with projection
+app.get('/imgp', function (req, res) {
+
+    const runApp = async () => {
+    
+        const stillCamera = new StillCamera()
+    
+        const image1 = await stillCamera.takeImage()
+
+        //saving to local storage
+        fs.writeFileSync("/img/cam01"+now+".jpg", image1) 
+
+        //sending image to controller
+        res.set('Content-Type', 'image/jpg')
+        res.send(Buffer.from(image)) 
+
+    }
+
+    runApp()
     
 })
     
