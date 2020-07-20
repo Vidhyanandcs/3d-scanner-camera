@@ -1,5 +1,5 @@
 const express = require('express')
-const { StillCamera } = require("pi-camera-connect")
+const { StillCamera } = require('pi-camera-connect')
 const fs = require('fs')
 
 const app = express()
@@ -16,9 +16,11 @@ app.get('/', function (req, res) {
     
         const image = await stillCamera.takeImage();
     
-        fs.writeFileSync("/img/cam01"+now+".jpg", image);
+        //fs.writeFileSync("/img/cam01"+now+".jpg", image);
 
-        res.send("Image captured and saved by cam01");
+        res.writeHead(200,{'Content-type':'image/jpg'});
+
+        res.end(image);
     }
 
     runApp()
