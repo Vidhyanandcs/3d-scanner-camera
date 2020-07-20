@@ -8,7 +8,7 @@ const date = new Date()
 const now = date.getTime()
 
 //To get images with out projection
-app.get('/imgwp', function (req, res) {
+app.get('/imgnp', function (req, res) {
 
     const runApp = async () => {
     

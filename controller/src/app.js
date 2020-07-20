@@ -5,8 +5,8 @@ const app = express()
 
 axios.all([
 
-    axios.get('http://192.168.99.99:3000'), //dummy
-    axios.get('http://192.168.99.99:3000') //dummy
+    axios.get('http://192.168.99.99:3000/imgnp'), //dummy
+    axios.get('http://192.168.99.99:3000/imgnp') //dummy
 
 ]).then(axios.spread((response1, response2) => {
 
