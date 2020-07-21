@@ -1,5 +1,6 @@
 const express = require('express')
 const axios = require('axios')
+const fs = require('fs')
 
 const app = express()
 
@@ -16,8 +17,8 @@ axios.all([
 ]).then(axios.spread((response1, response2) => {
 
     //saving to local storage
-    fs.writeFileSync("/img/cam01"+now+".jpg", response1.data.image) 
-    fs.writeFileSync("/img/cam02"+now+".jpg", response2.data.image)
+    fs.writeFileSync("./imgnp/cam01"+now+".jpg", response1.data.image) 
+    fs.writeFileSync("./imgnp/cam02"+now+".jpg", response2.data.image)
     
 })).catch(error => {
     console.log(error)
@@ -32,8 +33,8 @@ axios.all([
 ]).then(axios.spread((response1, response2) => {
 
     //saving to local storage
-    fs.writeFileSync("/img/cam01"+now+".jpg", response1.data.image) 
-    fs.writeFileSync("/img/cam02"+now+".jpg", response2.data.image)
+    fs.writeFileSync("./imgnp/cam01"+now+".jpg", response1.data.image) 
+    fs.writeFileSync("./imgnp/cam02"+now+".jpg", response2.data.image)
     
 })).catch(error => {
     console.log(error)
