@@ -17,7 +17,7 @@ app.get('/imgnp', function (req, res) {
         const image = await stillCamera.takeImage()
 
         //saving to local storage
-        fs.writeFileSync("/img/cam01"+now+".jpg", image) 
+        //fs.writeFileSync("/img/cam01"+now+".jpg", image) 
 
         //sending image to controller
         res.set('Content-Type', 'image/jpg')
