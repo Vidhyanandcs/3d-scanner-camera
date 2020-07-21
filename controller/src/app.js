@@ -17,7 +17,23 @@ axios.all([
 
     //saving to local storage
     fs.writeFileSync("/img/cam01"+now+".jpg", response1.data.image) 
-    fs.writeFileSync("/img/cam01"+now+".jpg", response2.data.image)
+    fs.writeFileSync("/img/cam02"+now+".jpg", response2.data.image)
+    
+})).catch(error => {
+    console.log(error)
+})
+
+//Get request for images with projection
+axios.all([
+
+    axios.get('http://192.168.43.100:3000/imgp'), 
+    axios.get('http://192.168.43.102:3000/imgp') 
+
+]).then(axios.spread((response1, response2) => {
+
+    //saving to local storage
+    fs.writeFileSync("/img/cam01"+now+".jpg", response1.data.image) 
+    fs.writeFileSync("/img/cam02"+now+".jpg", response2.data.image)
     
 })).catch(error => {
     console.log(error)
