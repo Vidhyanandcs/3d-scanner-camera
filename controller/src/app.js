@@ -3,15 +3,21 @@ const axios = require('axios')
 
 const app = express()
 
+//For timestamp
+const date = new Date()
+const now = date.getTime()
+
+//Get request for images without projection
 axios.all([
 
-    axios.get('http://192.168.99.99:3000/imgnp'), //dummy
-    axios.get('http://192.168.99.99:3000/imgnp') //dummy
+    axios.get('http://192.168.43.100:3000/imgnp'), 
+    axios.get('http://192.168.43.102:3000/imgnp') 
 
 ]).then(axios.spread((response1, response2) => {
 
-    console.log(response1.data)
-    console.log(response2.data)
+    //saving to local storage
+    fs.writeFileSync("/img/cam01"+now+".jpg", response1.data.image) 
+    fs.writeFileSync("/img/cam01"+now+".jpg", response2.data.image)
     
 })).catch(error => {
     console.log(error)
