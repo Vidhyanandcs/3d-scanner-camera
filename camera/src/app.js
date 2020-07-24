@@ -1,57 +1,24 @@
 const express = require('express')
-const { StillCamera } = require('pi-camera-connect')
-const fs = require('fs')
+const shoot = require('./camera')
+const zip = require('./zip')
+const clear = require('./clear')
 
 const app = express()
 
-const date = new Date()
-const now = date.getTime()
+app.get('/capture', function (req, res) {
 
-//To get images with out projection
-app.get('/imgnp', function (req, res) {
+    clear()
 
-    const runApp = async () => {
-    
-        const stillCamera = new StillCamera()
-    
-        const image = await stillCamera.takeImage()
+    shoot()
 
-        //saving to local storage
-        //fs.writeFileSync("/img/cam01"+now+".jpg", image) 
+    const cam01Images = zip()
 
-        //sending image to controller
-        res.set('Content-Type', 'image/jpg')
-        res.send(Buffer.from(image)) 
-
-    }
-
-    runApp()
+    //sending saved images to controller
+    res.set('Content-Type','application/octet-stream')
+    res.set('Content-Length',cam01Images.length)
+    res.send(cam01Images)
     
 })
-
-//To get images with projection
-app.get('/imgp', function (req, res) {
-
-    const runApp = async () => {
-    
-        const stillCamera = new StillCamera()
-    
-        const image1 = await stillCamera.takeImage()
-
-        //saving to local storage
-        fs.writeFileSync("/img/cam01"+now+".jpg", image1) 
-
-        //sending image to controller
-        res.set('Content-Type', 'image/jpg')
-        res.send(Buffer.from(image)) 
-
-    }
-
-    runApp()
-    
-})
-    
- 
 
 app.listen(3000, () => {
     console.log('Server is running in port 3000')
