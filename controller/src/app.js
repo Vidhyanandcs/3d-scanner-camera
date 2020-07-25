@@ -20,6 +20,7 @@ axios.all([
             responseType: 'arraybuffer',
 
     }), 
+    
     axios.get("http://192.168.43.102:3000/capture", {  
 
         headers: {
