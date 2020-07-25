@@ -20,8 +20,8 @@ const runApp = async () => {
     const image1 = await stillCameraWP.takeImage()
 
     //saving images to local storage
-    fs.writeFileSync("./img/WPcam01"+now+".jpg", image) 
-    fs.writeFileSync("./img/Pcam01"+now+".jpg", image1)
+    fs.writeFileSync(`./img/WPcam01${now}.jpg`, image) 
+    fs.writeFileSync(`./img/Pcam01${now}.jpg`, image1)
 
 }
 
