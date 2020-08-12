@@ -23,7 +23,24 @@ const now = date.getTime()
 
 app.get('/test', (req,res) => {
 
-    res.render('final')
+    //Get request for testing
+    axios.all([
+
+        axios.get("http://192.168.43.100:3000/test"), 
+        
+        axios.get("http://192.168.43.102:3000/test") 
+
+    ]).then(axios.spread((response1, response2) => {
+
+        res.render('final', {
+            cam01:`cam01: ${response1.statusText}`,
+            cam02:`cam01: ${response2.statusText}`
+        })
+        
+        
+    })).catch(error => {
+        console.log(error)
+    })
 
 })
 
