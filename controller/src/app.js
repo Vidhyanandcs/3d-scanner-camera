@@ -33,8 +33,8 @@ app.get('/test', (req,res) => {
     ]).then(axios.spread((response1, response2) => {
 
         res.render('final', {
-            cam01:`cam01: ${response1.statusText}`,
-            cam02:`cam01: ${response2.statusText}`
+            cam01:`cam01: ${response1.data}`,
+            cam02:`cam01: ${response2.data}`
         })
         
         
