@@ -12,8 +12,8 @@
   "author": "Vidhyanand",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.1",
-    "express": "^4.16.4",
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
     "hbs": "^4.1.1"
   }
 }
