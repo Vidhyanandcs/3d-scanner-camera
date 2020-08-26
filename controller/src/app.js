@@ -57,8 +57,6 @@ app.get('/shoot', (req,res) => {
                 responseType: 'arraybuffer',
 
         }), 
-
-        axios.get("http://192.168.43.103:3000/project"),
         
         axios.get("http://192.168.43.102:3000/capture", {  
 
