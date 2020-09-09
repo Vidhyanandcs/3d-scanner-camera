@@ -8,9 +8,10 @@ Go to root folder
 Initiate NPM
 
     sudo npm init
+    
 OR
 
-   sudo npm install --save
+    sudo npm install --save
 
 Start a server
 
