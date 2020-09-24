@@ -3,7 +3,7 @@
 
 Go to root folder 
 
-    cd 3d-scanner
+    cd 3d-scanner-pme
 
 Initiate NPM (use  the below two commands)
 
