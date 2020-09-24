@@ -3,9 +3,9 @@
 
 Go to root folder 
 
-    cd 3d-scanner-pme/camera
+    cd 3d-scanner
 
-Initiate NPM (use any of the below two commands)
+Initiate NPM (use  the below two commands)
 
     sudo npm init
 

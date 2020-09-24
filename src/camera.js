@@ -11,7 +11,7 @@ const runApp = async () => {
     const stillCamera = new StillCamera()
 
     const stillCameraWP = new StillCamera({
-        delay: 500 //delay of 500ms
+        delay: 1000 //delay of 1000ms
     })
 
     //To get images with out projection
