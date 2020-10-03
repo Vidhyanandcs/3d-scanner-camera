@@ -27,27 +27,14 @@ app.get('/capture', function (req, res) {
 
     clear()
 
-    const result = shoot()
+    shoot()
 
-    if(result == true){
+    const cam01Images = zip()
 
-        const cam01Images = zip()
-
-
-        //sending saved images to controller
-        res.set('Content-Type','application/octet-stream')
-        res.set('Content-Length',cam01Images.length)
-        res.send(cam01Images)
-
-    } else {
-
-        let enc = new TextEncoder()
-        let message = enc.encode('There is a problem with hardware')
-        let bufferMessage = message.buffer
-        res.status(503).send(bufferMessage)
-
-
-    } 
+    //sending saved images to controller
+    res.set('Content-Type','application/octet-stream')
+    res.set('Content-Length',cam01Images.length)
+    res.send(cam01Images)
     
 })
 

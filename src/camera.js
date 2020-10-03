@@ -20,18 +20,9 @@ const runApp = async () => {
     //To get images with projection
     const image1 = await stillCameraWP.takeImage()
 
-    if(image1 && image){
-
-        //saving images to local storage
-        fs.writeFileSync(`./img/WPcam01${now}.jpg`, image) 
-        fs.writeFileSync(`./img/Pcam01${now}.jpg`, image1)
-        return true
-
-    }else{
-
-        return false
-    }
-    
+    //saving images to local storage
+    fs.writeFileSync(`./img/WPcam01${now}.jpg`, image) 
+    fs.writeFileSync(`./img/Pcam01${now}.jpg`, image1)
 
 }
 
