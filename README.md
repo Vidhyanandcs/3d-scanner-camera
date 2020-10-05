@@ -1,9 +1,9 @@
-# 3d-scanner-pme
+# 3d-scanner-camera
 3d scanner camera controller module which takes photos, compress it and send it to main controller.
 
 Go to root folder 
 
-    cd 3d-scanner-pme
+    cd 3d-scanner-camera
 
 Initiate NPM (use  the below two commands)
 
