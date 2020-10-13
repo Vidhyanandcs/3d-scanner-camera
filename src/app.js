@@ -1,7 +1,8 @@
 const express = require('express')
+const clear = require('./clear')
 const shoot = require('./camera')
 const zip = require('./zip')
-const clear = require('./clear')
+
 
 const app = express()
 
