@@ -4,7 +4,7 @@ const path = require('path')
 const remove = () => {
 
     //Deleting the images in current folder
-    fs.readdir((__dirname,'..','img'), (err, files) => {
+    fs.readdirSync((__dirname,'..','img'), (err, files) => {
         if (err) console.log(err)
         for (const file of files) {
             fs.unlink(path.join(__dirname,'..','img', file), err => {
