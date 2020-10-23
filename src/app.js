@@ -33,27 +33,25 @@ app.get('/capture', function (req, res) {
 
         shoot().then(() => {
 
-            zip().then((file) =>{
+            
+            const cam01Images = zip()
+            //sending saved images to controller
+                 
+            res.set('Content-Type','application/octet-stream')
+            res.set('Content-Length',cam01Images.length)
+            res.send(cam01Images)
 
-                //sending saved images to controller
-                const cam01Images = file
-                res.set('Content-Type','application/octet-stream')
-                res.set('Content-Length',cam01Images.length)
-                res.send(cam01Images)
-
-            }).catach(()=>{
-                console.log(error)
-            })
-
-
-        }).catch((error)=>{
+        }).catch((error) =>{
 
             console.log(error)
-        })
 
-    }).catach((error)=>{
+        })   
+
+    }).catch((error) => {
+
         console.log(error)
-    })   
+
+    })    
     
 })
 
