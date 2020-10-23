@@ -16,8 +16,11 @@ app.get('/test', function (req, res) {
     const cam01Images = zip()
 
     if(cam01Images){
+
         res.send('Working')
+
     }else{
+        
         res.send('Not Working')
     } 
     
@@ -26,16 +29,30 @@ app.get('/test', function (req, res) {
 //Endpoint for capturing
 app.get('/capture', function (req, res) {
 
-    clear()
+    clear().then(()=>{
 
-    shoot()
+        shoot().then(() => {
 
-    const cam01Images = zip()
+            const cam01Images = zip()
 
-    //sending saved images to controller
-    res.set('Content-Type','application/octet-stream')
-    res.set('Content-Length',cam01Images.length)
-    res.send(cam01Images)
+            //sending saved images to controller
+            res.set('Content-Type','application/octet-stream')
+            res.set('Content-Length',cam01Images.length)
+            res.send(cam01Images)
+
+
+        }).catch((error)=>{
+
+            console.log(error)
+        })
+
+    }).catach((error)=>{
+        console.log(error)
+    })
+
+    
+
+    
     
 })
 
