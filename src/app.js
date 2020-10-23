@@ -9,7 +9,7 @@ const app = express()
 //Endpoint for testing
 app.get('/test', function (req, res) {
 
-    let remove = clear()
+    clear()
 
     shoot()
 

@@ -1,17 +1,10 @@
 const fs = require('fs')
 const path = require('path')
+const rimraf = require('rimraf')
 
 const remove = () => {
 
-    //Deleting the images in current folder
-    fs.readdirSync((__dirname,'..','img'), (err, files) => {
-        if (err) console.log(err)
-        for (const file of files) {
-            fs.unlink(path.join(__dirname,'..','img', file), err => {
-                if (err) console.log(err)
-            })
-        }
-    })
+    rimraf('./img/*', function () { console.log('done'); });
 
 }
 
