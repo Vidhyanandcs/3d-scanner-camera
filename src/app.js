@@ -1,6 +1,6 @@
 const express = require('express')
 const clear = require('./clear')
-// const shoot = require('./camera')
+const shoot = require('./camera')
 const zip = require('./zip')
 
 
@@ -32,8 +32,7 @@ app.get('/capture', function (req, res) {
     clear().then(()=>{
 
         shoot().then(() => {
-
-            
+ 
             const cam01Images = zip()
             //sending saved images to controller
                  

@@ -23,6 +23,7 @@ const runApp = async () => {
     //saving images to local storage
     fs.writeFileSync(`./img/WPcam01${now}.jpg`, image) 
     fs.writeFileSync(`./img/Pcam01${now}.jpg`, image1)
+    
 
 }
 
