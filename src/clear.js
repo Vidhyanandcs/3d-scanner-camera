@@ -4,7 +4,11 @@ const rimraf = require('rimraf')
 
 const remove = () => {
 
-    rimraf('./img/*', function () { console.log('done'); });
+    return new Promise((accept, reject) =>{
+
+        rimraf('./img/*', function () { console.log('done'); });
+
+    })
 
 }
 

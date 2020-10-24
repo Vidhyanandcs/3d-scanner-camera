@@ -19,5 +19,13 @@
     "google-drive-image-upload": "^1.0.2",
     "pi-camera-connect": "^0.3.0",
     "rimraf": "^3.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vidhyanandcs/3d-scanner-camera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vidhyanandcs/3d-scanner-camera/issues"
+  },
+  "homepage": "https://github.com/Vidhyanandcs/3d-scanner-camera#readme"
 }
