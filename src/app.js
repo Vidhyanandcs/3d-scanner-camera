@@ -33,12 +33,7 @@ app.get('/capture', function (req, res) {
 
         shoot().then(() => {
  
-            const cam01Images = zip()
-            //sending saved images to controller
-                 
-            res.set('Content-Type','application/octet-stream')
-            res.set('Content-Length',cam01Images.length)
-            res.send(cam01Images)
+            res.send('Image Taken')
 
         }).catch((error) =>{
 
@@ -51,6 +46,18 @@ app.get('/capture', function (req, res) {
         console.log(error)
 
     })    
+    
+})
+
+//Endpoint for sending images
+app.get('/image', function (req, res) {
+
+    const cam01Images = zip()
+    //sending saved images to controller
+                 
+    res.set('Content-Type','application/octet-stream')
+    res.set('Content-Length',cam01Images.length)
+    res.send(cam01Images)       
     
 })
 
