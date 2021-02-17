@@ -1,5 +1,5 @@
 # 3d-scanner-camera
-3d scanner camera controller module which takes photos, compress it and send it to main controller.
+3d scanner camera  module which takes photos, compress it and send it to main controller.
 
 Go to root folder 
 
