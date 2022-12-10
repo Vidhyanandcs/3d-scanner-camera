@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "adm-zip": "^0.4.13",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "google-drive-image-upload": "^1.0.2",
     "pi-camera-connect": "^0.3.0",
     "rimraf": "^3.0.2"
